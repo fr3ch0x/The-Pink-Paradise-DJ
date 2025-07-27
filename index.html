@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pide Tu Musica al DJ</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 class="inicio">PIDE TU MÚSICA AL DJ<br><span class="subtitulo">( The Pink Paradise )</span></h1>
+
+<div class="container">
+    <div class="input-section">
+        <div class="request-form">
+            <input type="text" id="songInput" placeholder="Cancion - Artista" aria-label="Nombre de la cancion y artista">
+            <button id="sendSongBtn">Enviar</button>
+        </div>
+        <p id="validation-message" class="validation-message"></p>
+    </div>
+
+    <div class="song-list-container">
+        <h2>Lista de Canciones Pedidas</h2>
+        <ul id="songList">
+        </ul>
+    </div>
+</div>
+<footer class="main-footer">
+    <p>Copyright © 2025</p>
+    <p>Creador: Frechox</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap'); /* Importa la fuente Monoton */
+
+body {
+    background-color: #1a0033;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Esto es clave para que el footer se empuje hacia abajo */
+    align-items: center;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.dj-mode-link {
+position: absolute;
+top: 15px;
+right: 20px;
+z-index: 100;
+}
+
+.dj-mode-link a {
+color: rgba(255, 255, 255, 0.7);
+text-decoration: none;
+font-size: 0.9em;
+padding: 5px 10px;
+border-radius: 5px;
+transition: all 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dj-mode-link a:hover {
+color: #fff;
+border-color: #ff00ff;
+text-shadow: 0 0 5px #ff00ff;
+background-color: rgba(255, 0, 255, 0.1);
+}
+
+h1.inicio {
+font-size: 3rem;
+color: #fff;
+text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+margin: 0;
+padding: 30px 20px;
+text-transform: uppercase;
+width: 100%;
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.4);
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+text-align: center;
+font-family: 'Monoton', cursive;
+letter-spacing: 3px; /* Aumentado el espaciado */
+font-family: "Pacifico", cursive;
+animation: fadeInSlideDown 1s ease-out forwards;
+}
+
+.subtitulo {
+display: block;
+font-size: 0.7em;
+letter-spacing: 1.5px; /* Aumentado ligeramente el espaciado */
+margin-top: 5px;
+}
+
+@keyframes fadeInSlideDown {
+from {
+opacity: 0;
+transform: translateY(-50px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.container {
+background-color: transparent;
+padding: 20px;
+border-radius: 15px;
+box-shadow: none;
+width: 100%;
+max-width: 900px;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+margin-top: 30px;
+}
+
+.input-section {
+background-color: rgba(0, 0, 0, 0.4);
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+width: 100%;
+max-width: 500px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+animation: fadeIn 1s ease-out 0.5s forwards;
+opacity: 0;
+}
+
+.request-form {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin: 0;
+width: 100%;
+}
+
+#songInput {
+padding: 12px 15px;
+border: 2px solid #ff00ff;
+border-radius: 25px;
+background-color: rgba(255, 255, 255, 0.1);
+color: #fff;
+font-size: 1.1em;
+width: 60%;
+max-width: 400px;
+outline: none;
+transition: all 0.3s ease;
+}
+
+#songInput::placeholder {
+color: rgba(255, 255, 255, 0.7);
+}
+
+#songInput:focus {
+box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+border-color: #ff00ff;
+}
+
+#sendSongBtn {
+background-color: #ff00ff;
+color: #fff;
+padding: 12px 25px;
+border: none;
+border-radius: 25px;
+font-size: 1.1em;
+cursor: pointer;
+box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+transition: all 0.3s ease;
+text-transform: uppercase;
+font-weight: bold;
+}
+
+#sendSongBtn:hover {
+background-color: #ff33ff;
+box-shadow: 0 0 15px #ff33ff, 0 0 30px #ff33ff;
+}
+
+.validation-message {
+color: #ff3333;
+font-size: 0.9em;
+margin-top: 10px;
+min-height: 1.5em;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+}
+
+.validation-message.show {
+opacity: 1;
+}
+
+.song-list-container {
+background-color: rgba(0, 0, 0, 0.6);
+padding: 30px;
+border-radius: 15px;
+margin-top: 0;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+width: 100%;
+max-width: 700px;
+animation: fadeIn 1s ease-out 1s forwards;
+opacity: 0;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+h2 {
+font-size: 1.8em;
+color: #fff;
+text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff00ff;
+margin-top: 0;
+margin-bottom: 20px;
+font-family: "Pacifico", cursive;
+letter-spacing: 2px; /* Aumentado el espaciado */
+}
+
+#songList {
+list-style: none;
+padding: 0;
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin: 0;
+}
+
+#songList li {
+background-color: #ff00ff;
+color: #fff;
+padding: 12px 20px;
+border-radius: 25px;
+box-shadow: 0 0 8px #ff00ff, 0 0 15px #ff00ff;
+font-size: 1.1em;
+font-weight: bold;
+text-transform: uppercase;
+transition: all 0.3s ease;
+cursor: pointer;
+min-height: 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+word-break: break-word;animation: fadeInSlideIn 0.5s ease-out forwards;
+opacity: 0;
+transform: translateY(20px);
+}
+
+@keyframes fadeInSlideIn {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+
+#songList li.fade-out {
+animation: fadeOutSlideOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutSlideOut {
+from {
+opacity: 1;
+transform: translateY(0);
+height: auto;
+padding: 12px 20px;
+}
+to {
+opacity: 0;
+transform: translateY(-20px);
+height: 0;
+padding: 0;
+margin: 0;
+}
+}
+
+.song-link {
+color: #fff;
+text-decoration: none;
+flex-grow: 1;
+text-align: left;
+margin-right: 10px;
+user-select: none;
+cursor: pointer;
+}
+
+.song-link:hover {
+color: #eee;
+text-shadow: 0 0 5px #fff;
+}
+
+.delete-button {
+color: #ff3333;
+font-weight: bold;
+cursor: pointer;
+padding: 8px 12px;
+border-radius: 50%;
+background-color: rgba(255, 51, 51, 0.15);
+transition: all 0.2s ease;
+box-shadow: 0 0 5px #ff3333, 0 0 10px #ff3333;
+font-size: 0.9em;
+line-height: 1;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 24px;
+height: 24px;
+}
+
+.delete-button:hover {
+background-color: rgba(255, 51, 51, 0.4);
+box-shadow: 0 0 8px #ff3333, 0 0 15px #ff3333, 0 0 25px #ff00ff;
+transform: scale(1.1);
+}/* Responsive adjustments */
+
+@media (max-width: 768px) {
+.dj-mode-link {
+top: 10px;
+right: 10px;
+}
+}
+
+.dj-mode-link a {
+font-size: 0.8em;
+padding: 3px 8px;
+}h1.inicio {
+    font-size: 2.2em;
+    padding: 20px 10px;
+    letter-spacing: 2px; /* Ajuste para pantallas pequeñas */
+}
+
+.subtitulo {
+    font-size: 0.6em;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.5em;
+    letter-spacing: 1.5px; /* Ajuste para pantallas pequeñas */
+}
+
+.container {
+    padding: 10px;
+}
+
+.input-section, .song-list-container {
+    padding: 20px;
+}
+
+.request-form {
+    flex-direction: column;
+    align-items: center;
+}
+
+#songInput {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#sendSongBtn {
+    width: 80%;
+}
+
+#songList li {
+    font-size: 1em;
+    padding: 10px 15px;
+}
+.delete-button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+    width: 20px;
+    height: 20px;
+}
+
+
+@media (max-width: 480px) {
+.dj-mode-link {
+top: 5px;
+right: 5px;
+}
+.dj-mode-link a {
+font-size: 0.7em;
+padding: 2px 5px;
+}
+}
+
+.container {
+padding: 5px;
+gap: 20px;
+}h1.inicio {
+    font-size: 1.8em;
+    padding: 15px 5px;
+    letter-spacing: 1.5px; /* Ajuste para pantallas muy pequeñas */
+}
+.subtitulo {
+    font-size: 0.5em;
+    letter-spacing: 0.8px;
+}
+
+h2 {
+    font-size: 1.3em;
+    letter-spacing: 1.2px; /* Ajuste para pantallas muy pequeñas */
+}
+
+.input-section, .song-list-container {
+    padding: 15px;
+}
+
+#songInput, #sendSongBtn {
+    font-size: 1em;
+    padding: 10px 15px;
+}
+
+#songList li {
+    font-size: 0.9em;
+    padding: 8px 12px;
+}
+.delete-button {
+    padding: 5px 8px;
+    font-size: 0.7em;
+    width: 18px;
+    height: 18px;
+}
+
+/* Nuevo estilo para el footer */
+.main-footer {
+    background-color: rgba(0, 0, 0, 0.6); /* Color de fondo similar a tus contenedores */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%; /* Se extiende a todo el ancho */
+    margin-top: auto; /* Esto empuja el footer al final si el contenido es menor que la altura de la vista */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3); /* Sombra superior sutil */
+    font-size: 0.9em;
+    font-family: "Pacifico", cursive;
+    letter-spacing: 1px;
+}
+
+.main-footer p {
+    margin: 5px 0; /* Espaciado entre las líneas de texto del footer */
+}
+
+/* ... (tus media queries existentes) ... */
